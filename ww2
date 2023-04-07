@@ -1,5 +1,18 @@
+__=
+
+	"Discord: Actyrn#7104, Server: .gg/wDngb2mv4H"
+
+-- Credits to Elegant & Fulcrum.#2610, the original script coders!!
+
+-- DO NOT EDIT BELOW IF YOU DON'T KNOW WHAT YOU'RE DOING!!
+
+repeat wait() until game:IsLoaded()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Arviiiin/azure1/main/ww1"))()
+
 -- Variables
-local NotifLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Arviiiin/azure1/main/ww1"))()
+
+local NotifLib = loadstring(game:HttpGet("https://pastebin.com/raw/KRep3e1w"))()
 
 local CamBindEnabled = false
 local TargBindEnabled = false
