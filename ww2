@@ -1,8 +1,5 @@
-loadstring(game:HttpGet(""))()
-
 -- Variables
-
-local NotifLib = loadstring(game:HttpGet("https://pastebin.com/raw/KRep3e1w"))()
+local NotifLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Arviiiin/azure1/main/ww1"))()
 
 local CamBindEnabled = false
 local TargBindEnabled = false
