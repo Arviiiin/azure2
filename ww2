@@ -14,8 +14,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Arviiiin/azure1/main/
 
 local NotifLib = loadstring(game:HttpGet("https://pastebin.com/raw/KRep3e1w"))()
 
-local CamBindEnabled = false
-local TargBindEnabled = false
+local TargBindEnabled, CamBindEnabled = false, false
 
 local Player = game.Players.LocalPlayer
 
@@ -190,7 +189,7 @@ library = library
 
 library:CheckErrors(true, true, Player, __, Actyrn7104) -- If you remove there's a chance script wont work, DON'T REMOVE !!
 
-local Actyrn_7104 = library:CreateWindow("Azure Modded | Actyrn#7104 | .gg/wDngb2mv4H", Vector2.new(492, 592), Enum.KeyCode.RightShift)
+local Actyrn_7104 = library:CreateWindow("Azure Modded | Actyrn#7104 | .gg/wDngb2mv4H", Vector2.new(490, 590), Enum.KeyCode.RightShift)
 
 -- Tabs
 
@@ -215,292 +214,292 @@ local AntiLockSec = MiscTab:CreateSector("Anti Lock", "right")
 
 -- Utilities
 
-local NoJumpCdToggle = UtilitiesSec:AddToggle("No Jump Cooldown", false, function(x)
-	Utilities.NoJumpCooldown = x
+local NoJumpCdToggle = UtilitiesSec:AddToggle("No Jump Cooldown", false, function(Value)
+	Utilities.NoJumpCooldown = Value
 end)
 
-UtilitiesSec:AddToggle("Anti Stomp", false, function(x)
-	Utilities.AntiStomp = x
+UtilitiesSec:AddToggle("Anti Stomp", false, function(Value)
+	Utilities.AntiStomp = Value
 end)
 
-UtilitiesSec:AddToggle("No Slowdown", false, function(x)
-	Utilities.NoSlowdown = x
+UtilitiesSec:AddToggle("No Slowdown", false, function(Value)
+	Utilities.NoSlowdown = Value
 end)
 
 -- Target Aimbot
 
-TargetAimbotSec:AddToggle("Enabled", false, function(x)
-	TargetAimbot.Enabled = x
+TargetAimbotSec:AddToggle("Enabled", false, function(Value)
+	TargetAimbot.Enabled = Value
 end)
 
-TargetAimbotSec:AddKeybind("Keybind", nil, function(x)
-	TargetAimbot.Keybind = x
+TargetAimbotSec:AddKeybind("Keybind", nil, function(Value)
+	TargetAimbot.Keybind = Value
 end)
 
-TargetAimbotSec:AddTextbox("Prediction", nil, function(x)
-	TargetAimbot.Prediction = x
+TargetAimbotSec:AddTextbox("Prediction", nil, function(Value)
+	TargetAimbot.Prediction = Value
 end)
 
-local TargResolverTog = TargetAimbotSec:AddToggle("Antilock Resolver", false, function(x)
-	TargetAimbot.Resolver = x
+local TargResolverTog = TargetAimbotSec:AddToggle("Antilock Resolver", false, function(Value)
+	TargetAimbot.Resolver = Value
 end)
 
 TargResolverTog:AddKeybind()
 
-TargetAimbotSec:AddSlider("Jump Offset", -3, 0, 3, 100, function(x)
-	TargetAimbot.JumpOffset = x
-	TargetAimbot.RealJumpOffset = x
+TargetAimbotSec:AddSlider("Jump Offset", -3, 0, 3, 100, function(Value)
+	TargetAimbot.JumpOffset = Value
+	TargetAimbot.RealJumpOffset = Value
 end)
 
-TargetAimbotSec:AddDropdown("Hit-Part(s)", {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightLowerArm", "LeftLowerArm", "RightUpperArm", "LeftUpperArm", "RightUpperLeg", "LeftUpperLeg", "RightLowerLeg", "LeftLowerLeg"}, {"HumanoidRootPart"}, true, function(x)
-	TargetAimbot.HitParts = x
+TargetAimbotSec:AddDropdown("Hit-Part(s)", {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightLowerArm", "LeftLowerArm", "RightUpperArm", "LeftUpperArm", "RightUpperLeg", "LeftUpperLeg", "RightLowerLeg", "LeftLowerLeg"}, {"HumanoidRootPart"}, true, function(Value)
+	TargetAimbot.HitParts = Value
 end)
 
-TargetAimbotSec:AddToggle("Notifications", false, function(x)
-	TargetAimbot.Notifications = x
+TargetAimbotSec:AddToggle("Notifications", false, function(Value)
+	TargetAimbot.Notifications = Value
 end)
 
-TargetAimbotSec:AddToggle("Look At", false, function(x)
-	TargetAimbot.LookAt = x
+TargetAimbotSec:AddToggle("Look At", false, function(Value)
+	TargetAimbot.LookAt = Value
 end)
 
-local ViewAtTog = TargetAimbotSec:AddToggle("View At", false, function(x)
-	TargetAimbot.ViewAt = x
+local ViewAtTog = TargetAimbotSec:AddToggle("View At", false, function(Value)
+	TargetAimbot.ViewAt = Value
 end)
 
 ViewAtTog:AddKeybind()
 
-local TargDotTog = TargetAimbotSec:AddToggle("Dot", false, function(x)
-	TargetAimbot.Dot = x
+local TargDotTog = TargetAimbotSec:AddToggle("Dot", false, function(Value)
+	TargetAimbot.Dot = Value
 end)
 
-TargDotTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(x)
-	TargCursorDot.Color = x
-	TargDotFrame.BackgroundColor3 = x
+TargDotTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(Value)
+	TargCursorDot.Color = Value
+	TargDotFrame.BackgroundColor3 = Value
 end)
 
-local TargTracerTog = TargetAimbotSec:AddToggle("Tracer", false, function(x)
-	TargetAimbot.Tracer = x
+local TargTracerTog = TargetAimbotSec:AddToggle("Tracer", false, function(Value)
+	TargetAimbot.Tracer = Value
 end)
 
-TargTracerTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(x)
-	TargTracerLine.Color = x
+TargTracerTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(Value)
+	TargTracerLine.Color = Value
 end)
 
-TargetAimbotSec:AddToggle("Dot on Cursor", false, function(x)
-	TargetAimbot.DotOnCursor = x
+TargetAimbotSec:AddToggle("Dot on Cursor", false, function(Value)
+	TargetAimbot.DotOnCursor = Value
 end)
 
-local HighlightTog = TargetAimbotSec:AddToggle("Highlight", false, function(x)
-	TargetAimbot.Highlight = x
+local HighlightTog = TargetAimbotSec:AddToggle("Highlight", false, function(Value)
+	TargetAimbot.Highlight = Value
 end)
 
-HighlightTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(x)
-	Highlight.FillColor = x
+HighlightTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(Value)
+	Highlight.FillColor = Value
 end)
 
-HighlightTog:AddColorpicker(Color3.fromRGB(90, 65, 110), function(x)
-	Highlight.OutlineColor = x
+HighlightTog:AddColorpicker(Color3.fromRGB(90, 65, 110), function(Value)
+	Highlight.OutlineColor = Value
 end)
 
-TargetAimbotSec:AddToggle("Stats", false, function(x)
-	TargetAimbot.Stats = x
+TargetAimbotSec:AddToggle("Stats", false, function(Value)
+	TargetAimbot.Stats = Value
 end)
 
-TargetAimbotSec:AddToggle("Use FOV", false, function(x)
-	TargetAimbot.UseFov = x
+TargetAimbotSec:AddToggle("Use FOV", false, function(Value)
+	TargetAimbot.UseFov = Value
 end)
 
-local TargFovTog = TargetAimbotSec:AddToggle("FOV Visible", false, function(x)
-	TargFovCircle.Visible = x
+local TargFovTog = TargetAimbotSec:AddToggle("FOV Visible", false, function(Value)
+	TargFovCircle.Visible = Value
 end)
 
-TargFovTog:AddColorpicker(Color3.fromRGB(80, 15, 180), function(x)
-	TargFovCircle.Color = x
+TargFovTog:AddColorpicker(Color3.fromRGB(80, 15, 180), function(Value)
+	TargFovCircle.Color = Value
 end)
 
-TargetAimbotSec:AddSlider("FOV Size", 5, 80, 500, 1, function(x)
-	TargFovCircle.Radius = x * 2
+TargetAimbotSec:AddSlider("FOV Size", 5, 80, 500, 1, function(Value)
+	TargFovCircle.Radius = Value * 2
 end)
 
 -- Camera Aimbot
 
-CameraAimbotSec:AddToggle("Enabled", false, function(x)
-	CameraAimbot.Enabled = x
+CameraAimbotSec:AddToggle("Enabled", false, function(Value)
+	CameraAimbot.Enabled = Value
 end)
 
-CameraAimbotSec:AddKeybind("Keybind", nil, function(x)
-	CameraAimbot.Keybind = x
+CameraAimbotSec:AddKeybind("Keybind", nil, function(Value)
+	CameraAimbot.Keybind = Value
 end)
 
-CameraAimbotSec:AddTextbox("Prediction", nil, function(x)
-	CameraAimbot.Prediction = x
+CameraAimbotSec:AddTextbox("Prediction", nil, function(Value)
+	CameraAimbot.Prediction = Value
 end)
 
-local CamResolverTog = CameraAimbotSec:AddToggle("Antilock Resolver", false, function(x)
-	CameraAimbot.Resolver = x
+local CamResolverTog = CameraAimbotSec:AddToggle("Antilock Resolver", false, function(Value)
+	CameraAimbot.Resolver = Value
 end)
 
 CamResolverTog:AddKeybind()
 
-CameraAimbotSec:AddDropdown("Hit-Part", {"Head", "HumanoidRootPart", "UpperTorso", "LowerTorso"}, "HumanoidRootPart", false, function(x)
-	CameraAimbot.HitPart = x
+CameraAimbotSec:AddDropdown("Hit-Part", {"Head", "HumanoidRootPart", "UpperTorso", "LowerTorso"}, "HumanoidRootPart", false, function(Value)
+	CameraAimbot.HitPart = Value
 end)
 
-CameraAimbotSec:AddToggle("Notifications", false, function(x)
-	CameraAimbot.Notifications = x
+CameraAimbotSec:AddToggle("Notifications", false, function(Value)
+	CameraAimbot.Notifications = Value
 end)
 
-CameraAimbotSec:AddSlider("Jump Offset", -3, 0, 3, 100, function(x)
-	CameraAimbot.JumpOffset = x
-	CameraAimbot.RealJumpOffset = x
+CameraAimbotSec:AddSlider("Jump Offset", -3, 0, 3, 100, function(Value)
+	CameraAimbot.JumpOffset = Value
+	CameraAimbot.RealJumpOffset = Value
 end)
 
-CameraAimbotSec:AddToggle("Smoothness", false, function(x)
-	CameraAimbot.Smoothness = x
+CameraAimbotSec:AddToggle("Smoothness", false, function(Value)
+	CameraAimbot.Smoothness = Value
 end)
 
-CameraAimbotSec:AddTextbox("Smoothing", nil, function(x)
-	CameraAimbot.Smoothing = x
+CameraAimbotSec:AddTextbox("Smoothing", nil, function(Value)
+	CameraAimbot.Smoothing = Value
 end)
 
-CameraAimbotSec:AddToggle("Use FOV", false, function(x)
-	CameraAimbot.UseFov = x
+CameraAimbotSec:AddToggle("Use FOV", false, function(Value)
+	CameraAimbot.UseFov = Value
 end)
 
-local CamFovTog = CameraAimbotSec:AddToggle("FOV Visible", false, function(x)
-	CamFovCircle.Visible = x
+local CamFovTog = CameraAimbotSec:AddToggle("FOV Visible", false, function(Value)
+	CamFovCircle.Visible = Value
 end)
 
-CamFovTog:AddColorpicker(Color3.fromRGB(80, 15, 180), function(x)
-	CamFovCircle.Color = x
+CamFovTog:AddColorpicker(Color3.fromRGB(80, 15, 180), function(Value)
+	CamFovCircle.Color = Value
 end)
 
-CameraAimbotSec:AddSlider("FOV Size", 5, 80, 500, 1, function(x)
-	CamFovCircle.Radius = x * 2
+CameraAimbotSec:AddSlider("FOV Size", 5, 80, 500, 1, function(Value)
+	CamFovCircle.Radius = Value * 2
 end)
 
 -- MISC
 
 -- Movement
 
-local SpeedTog = MovementSec:AddToggle("Speed", false, function(x)
-	Movement.SpeedEnabled = x
+local SpeedTog = MovementSec:AddToggle("Speed", false, function(Value)
+	Movement.SpeedEnabled = Value
 end)
 
 SpeedTog:AddKeybind()
 
-MovementSec:AddSlider("Speed Amount", 1, 1, 5000, 1, function(x)
-	Movement.SpeedAmount = x / 1000
+MovementSec:AddSlider("Speed Amount", 1, 1, 5000, 1, function(Value)
+	Movement.SpeedAmount = Value / 1000
 end)
 
-MovementSec:AddToggle("Auto Jump", false, function(x)
-	Movement.AutoJump = x
+MovementSec:AddToggle("Auto Jump", false, function(Value)
+	Movement.AutoJump = Value
 end)
 
-local StrafeTog = MovementSec:AddToggle("Target Strafe", false, function(x)
-	Movement.StrafeEnabled = x
+local StrafeTog = MovementSec:AddToggle("Target Strafe", false, function(Value)
+	Movement.StrafeEnabled = Value
 end)
 
 StrafeTog:AddKeybind()
 
-MovementSec:AddSlider("Speed", 0.5, 0.5, 10, 2, function(x)
-	Movement.StrafeSpeed = x
+MovementSec:AddSlider("Speed", 0.5, 0.5, 10, 2, function(Value)
+	Movement.StrafeSpeed = Value
 end)
 
-MovementSec:AddSlider("Distance", 1, 1, 20, 2, function(x)
-	Movement.StrafeDistance = x
+MovementSec:AddSlider("Distance", 1, 1, 20, 2, function(Value)
+	Movement.StrafeDistance = Value
 end)
 
-MovementSec:AddSlider("Height", 1, 1, 20, 2, function(x)
-	Movement.StrafeHeight = x
+MovementSec:AddSlider("Height", 1, 1, 20, 2, function(Value)
+	Movement.StrafeHeight = Value
 end)
 
-local FlightTog = MovementSec:AddToggle("Flight", false, function(x)
-	Movement.FlightEnabled = x
+local FlightTog = MovementSec:AddToggle("Flight", false, function(Value)
+	Movement.FlightEnabled = Value
 end)
 
 FlightTog:AddKeybind()
 
-MovementSec:AddSlider("Speed", 1, 1, 5000, 1, function(x)
-	Movement.FlightSpeed = x / 20
+MovementSec:AddSlider("Speed", 1, 1, 5000, 1, function(Value)
+	Movement.FlightSpeed = Value / 20
 end)
 
 -- Self Dot
 
-local SelfDotTog = SelfDotSec:AddToggle("Enabled", false, function(x)
-	SelfDot.Enabled = x
+local SelfDotTog = SelfDotSec:AddToggle("Enabled", false, function(Value)
+	SelfDot.Enabled = Value
 end)
 
-SelfDotTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(x)
-	SelfDotCircle.Color = x
+SelfDotTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(Value)
+	SelfDotCircle.Color = Value
 end)
 
-SelfDotSec:AddToggle("Random Aim-Part", false, function(x)
-	SelfDot.RandomAimPart = x
+SelfDotSec:AddToggle("Random Aim-Part", false, function(Value)
+	SelfDot.RandomAimPart = Value
 end)
 
-SelfDotSec:AddSlider("Prediction", 1, 1, 5, 2, function(x)
-	SelfDot.Prediction = x / 20
+SelfDotSec:AddSlider("Prediction", 1, 1, 5, 2, function(Value)
+	SelfDot.Prediction = Value / 20
 end)
 
-SelfDotSec:AddDropdown("Aim-Part", {"Head", "HumanoidRootPart", "UpperTorso", "LowerTorso"}, "HumanoidRootPart", false, function(x)
-	SelfDot.AimPart = x
-	SelfDot.OldAimPart = x
+SelfDotSec:AddDropdown("Aim-Part", {"Head", "HumanoidRootPart", "UpperTorso", "LowerTorso"}, "HumanoidRootPart", false, function(Value)
+	SelfDot.AimPart = Value
+	SelfDot.OldAimPart = Value
 end)
 
 -- Anti Lock
 
-local AntiTog = AntiLockSec:AddToggle("Enabled", false, function(x)
-	AntiLock.Enabled = x
+local AntiTog = AntiLockSec:AddToggle("Enabled", false, function(Value)
+	AntiLock.Enabled = Value
 end)
 
 AntiTog:AddKeybind()
 
-AntiLockSec:AddDropdown("Mode", {"Custom", "Prediction Changer", "Prediction Disabler", "Up", "Down", "Prediction Tripler", "Prediction Reverser", "LookVector", "AirOrthodox", "Prediction Multiplier", "Spinbot Desync"}, "Custom", false, function(x)
-	AntiLock.Mode = x
+AntiLockSec:AddDropdown("Mode", {"Custom", "Prediction Changer", "Prediction Disabler", "Up", "Down", "Prediction Tripler", "Prediction Reverser", "LookVector", "AirOrthodox", "Prediction Multiplier", "Spinbot Desync"}, "Custom", false, function(Value)
+	AntiLock.Mode = Value
 end)
 
 AntiLockSec:AddLabel("Custom")
 
-AntiLockSec:AddSlider("Custom X", -10000, 10000, 10000, 1, function(x)
-	AntiLock.CustomX = x
+AntiLockSec:AddSlider("Custom X", -10000, 10000, 10000, 1, function(Value)
+	AntiLock.CustomX = Value
 end)
 
-AntiLockSec:AddSlider("Custom Y", -10000, 10000, 10000, 1, function(x)
-	AntiLock.CustomY = x
+AntiLockSec:AddSlider("Custom Y", -10000, 10000, 10000, 1, function(Value)
+	AntiLock.CustomY = Value
 end)
 
-AntiLockSec:AddSlider("Custom Z", -10000, 10000, 10000, 1, function(x)
-	AntiLock.CustomZ = x
+AntiLockSec:AddSlider("Custom Z", -10000, 10000, 10000, 1, function(Value)
+	AntiLock.CustomZ = Value
 end)
 
 AntiLockSec:AddLabel("LookVector")
 
-AntiLockSec:AddSlider("LookVector Amount", -1000, 500, 1000, 1, function(x)
-	AntiLock.LookVecAmt = x
+AntiLockSec:AddSlider("LookVector Amount", -1000, 500, 1000, 1, function(Value)
+	AntiLock.LookVecAmt = Value
 end)
 
 AntiLockSec:AddLabel("Prediction Changer")
 
-AntiLockSec:AddSlider("Prediction Amount", -20, 5, 20, 1, function(x)
-	AntiLock.PredChangeAmt = x
+AntiLockSec:AddSlider("Prediction Amount", -20, 5, 20, 1, function(Value)
+	AntiLock.PredChangeAmt = Value
 end)
 
 AntiLockSec:AddLabel("Spinbot Desync")
 
-AntiLockSec:AddDropdown("Desync Velocity", {"Default", "Sky", "Underground"}, "Default", false, function(x)
-	if x == "Default" then
+AntiLockSec:AddDropdown("Desync Velocity", {"Default", "Sky", "Underground"}, "Default", false, function(Value)
+	if Value == "Default" then
 		AntiLock.DesyncVel = Vector3.new(9e9, 9e9, 9e9)
-	elseif x == "Sky" then
+	elseif Value == "Sky" then
 		AntiLock.DesyncVel = Vector3.new(15, 9e9, 15)
-	elseif x == "Underground" then
+	elseif Value == "Underground" then
 		AntiLock.DesyncVel = Vector3.new(15, -9e9, 15)
 	end
 end)
 
-AntiLockSec:AddSlider("Desync Angles", -50, 0.5, 50, 2, function(x)
-	AntiLock.DesyncAngles = x
+AntiLockSec:AddSlider("Desync Angles", -50, 0.5, 50, 2, function(Value)
+	AntiLock.DesyncAngles = Value
 end)
 
 -- Code
@@ -624,7 +623,7 @@ end)
 
 spawn(function()
 	RunService.Heartbeat:Connect(function()
-		if TargetAimbot.Enabled and TargBindEnabled and TargetAimbot.Dot  then
+		if TargetAimbot.Enabled and TargBindEnabled and TargetAimbot.Dot then
 			TargCursorDot.Visible = false
 
 			if TargetAimbot.Resolver then
@@ -968,7 +967,7 @@ spawn(function()
 				if TargetAimbot.Notifications then
 					NotifLib.Notify({
 						Title = "Azure Modded [Actyrn#7104]", 
-						Description = "Targeting: " ..tostring(TargetPlr.Character.Humanoid.DisplayName), 
+						Description = "Targeting: " .. tostring(TargetPlr.Character.Humanoid.DisplayName), 
 						Duration = 3
 					})
 				end
@@ -976,7 +975,7 @@ spawn(function()
 				if TargetAimbot.Notifications then
 					NotifLib.Notify({
 						Title = "Azure Modded [Actyrn#7104]", 
-						Description = "Untargeting: " ..tostring(TargetPlr.Character.Humanoid.DisplayName), 
+						Description = "Untargeting: " .. tostring(TargetPlr.Character.Humanoid.DisplayName), 
 						Duration = 3
 					})
 				end
@@ -996,7 +995,7 @@ spawn(function()
 				if CameraAimbot.Notifications then
 					NotifLib.Notify({
 						Title = "Azure Modded [Actyrn#7104]", 
-						Description = "Targeting: " ..tostring(CamlockPlr.Character.Humanoid.DisplayName), 
+						Description = "Targeting: " .. tostring(CamlockPlr.Character.Humanoid.DisplayName), 
 						Duration = 3
 					})
 				end
@@ -1004,7 +1003,7 @@ spawn(function()
 				if CameraAimbot.Notifications then
 					NotifLib.Notify({
 						Title = "Azure Modded [Actyrn#7104]", 
-						Description = "Untargeting: " ..tostring(CamlockPlr.Character.Humanoid.DisplayName), 
+						Description = "Untargeting: " .. tostring(CamlockPlr.Character.Humanoid.DisplayName), 
 						Duration = 3
 					})
 				end
